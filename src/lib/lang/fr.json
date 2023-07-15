@@ -1,0 +1,7 @@
+{
+  "heading": "Internationalisation dans SvelteKit",
+  "toggle_label": "Sélectionnez les paramètres régionaux",
+  "button_label": "Générer des récompenses",
+  "body_text": "Ceci est un petit exemple pour démontrer la fonctionnalité i18n dans SvelteKit en utilisant la bibliothèque svelte-i18n. svelte-i18n vous aide à localiser votre application à l'aide des outils réactifs fournis par Svelte. En utilisant des magasins pour garder une trace des paramètres régionaux actuels, du dictionnaire des messages et pour formater les messages, nous gardons tout propre, synchronisé et facile à utiliser sur vos fichiers svelte. Le nombre total de téléchargements npm par semaine au {date} est de {download}.",
+  "awards": "Vous {n, plural, =0 { n'avez remporté aucun } one { avez gagné exactement # } other { avez remporté # }} prix"
+}
