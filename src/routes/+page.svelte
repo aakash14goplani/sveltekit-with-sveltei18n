@@ -14,6 +14,15 @@
   function generatePluralString() {
     randomNumber = Math.floor(Math.random() * (3+1 - 0) + 0);
   }
+
+  function getCurrencyCode(): string {
+    switch($locale) {
+      case 'en': return 'USD';
+      case 'hi': return 'INR';
+      case 'fr': return 'EUR';
+      default: return 'USD';
+    }
+  }
 </script>
 
 <div class="container">
@@ -55,7 +64,7 @@
       <div class="container__content__formatter">
         <span><strong>Time: </strong>{$time(new Date(), { hour: "numeric", minute: "numeric", second: "numeric" })}</span>
         <span><strong>Date: </strong>{$date(new Date(), { year: "numeric", month: "long", day: "numeric" })}</span>
-        <span><strong>Currency: </strong>{$number(2, { style: "currency", currency: "INR" })}</span>
+        <span><strong>Currency: </strong>{$number(2, { style: "currency", currency: getCurrencyCode() })}</span>
       </div>
     </div>
   {:else}
