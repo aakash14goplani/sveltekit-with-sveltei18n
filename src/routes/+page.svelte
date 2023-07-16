@@ -55,7 +55,7 @@
       <div class="container__content__formatter">
         <span><strong>Time: </strong>{$time(new Date(), { hour: "numeric", minute: "numeric", second: "numeric" })}</span>
         <span><strong>Date: </strong>{$date(new Date(), { year: "numeric", month: "long", day: "numeric" })}</span>
-        <span><strong>Number: </strong>{$number(2, { style: "currency", currency: "INR" })}</span>
+        <span><strong>Currency: </strong>{$number(2, { style: "currency", currency: "INR" })}</span>
       </div>
     </div>
   {:else}
