@@ -11,10 +11,6 @@
     $locale = value;
   }
 
-  function generatePluralString() {
-    randomNumber = Math.floor(Math.random() * (3+1 - 0) + 0);
-  }
-
   function getCurrencyCode(): string {
     switch($locale) {
       case 'en': return 'USD';
@@ -57,7 +53,11 @@
       })}</p>
 
       <div class="container__content__plural">
-        <button on:click={generatePluralString}>{$_('button_label')}</button>
+        <div class="container__content__plural__buttons">
+          <button class:active={randomNumber === 0} on:click={() => randomNumber = 0}>0</button>
+          <button class:active={randomNumber === 1} on:click={() => randomNumber = 1}>1</button>
+          <button class:active={randomNumber === 2} on:click={() => randomNumber = 2}>2</button>
+        </div>
         <span>{$_('awards', { values: { n: randomNumber } })}</span>
       </div>
 
@@ -105,10 +105,21 @@
 
       &__plural {
         display: flex;
+        flex-direction: column;
         margin: 1rem 0;
         
         button {
           margin-right: 2rem;
+        }
+
+        span {
+          margin-top: 1rem;
+        }
+
+        .active {
+          color: blue;
+          background-color: aliceblue;
+          padding: 0.5rem;
         }
       }
 
